@@ -21,7 +21,6 @@ nav {
     background: rgba(144, 58, 12, 0.785);
     color: lavender;
     height: 5rem;
-    /* box-sizing: border-box; */
 }
 
 .logo img {
@@ -54,7 +53,7 @@ nav {
   justify-content: space-between;
   cursor: pointer;
   position: relative;
-  left: 57px;
+  left: 27px;
   z-index: 1001;
   margin: 29px 0;
   
@@ -111,7 +110,6 @@ section {
     background-size: cover;
     background-position: center;
     position: relative;
-    /* min-height: 100vh; */
     z-index: 0;
     overflow: hidden;
 }
@@ -129,7 +127,6 @@ section {
     z-index: 2;
     text-align: center;
     font-size: 7rem;
-   /* padding-top: 3rem; */
    margin-bottom: 3rem;
 }
 
@@ -159,7 +156,6 @@ section {
     object-fit: cover;
     border-radius: 10rem;
      cursor: pointer;
-  /* transition: transform 0.3s; */
 }
 
 
@@ -222,7 +218,6 @@ section {
 }
 #Booking{
     height: auto;
-    /* width: 100%; */
 }
 #Booking h1 {
     text-align: center;
@@ -254,14 +249,12 @@ section {
 .booking_left{
     width: 50%;
     height: 100%;
-    /* box-sizing: border-box; */
     min-width: 0;
     
 }
 .booking_right{
     width: 50%;
     height: 100%;
-    /* box-sizing: border-box; */
     min-width: 0;
 }
 .booking_left .inputs, .booking_right .inputs {
@@ -345,32 +338,46 @@ section {
   word-wrap: break-word;
 }
 
-
 .footercontainer{
     display: flex;
     background: rgba(168, 88, 43, 0.94);
     height: 13rem;
 }
+
 .leftfooter {
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
    
 }
-
 .leftfooter ul {
-    font-size: 2rem;
-    margin: 2rem 0 0 14rem;
-}
-
-.leftfooter ul li {
     list-style: none;
-    color: white;
+    padding:  0;
+    margin: 0;
 }
 
-.leftfooter ul li img{
-    width: 49px;
-  margin:0 auto -9px 0;
+.leftfooter li {
+    display: flex;
+    align-items: center; /* aligns image and text vertically */
+  
+    margin-top: 12px 0;
+    padding: 0 0; /*spacing between list items*/
 }
 
+.leftfooter li img {
+    width: 24px;  /* or whatever size you want */
+    height: 24px;
+    object-fit: contain; /* keep image quality */
+    margin-right: 10px; /* space between image and text */
+}
+
+.leftfooter li span {
+    color:#fff;
+    font-size: 30px; /* adjust as needed */
+}
+
+*/
 .rightfooter {
     width: 50%;
     
@@ -383,7 +390,6 @@ section {
     list-style: none;
     color: white;
 }
-
 
 .rightfooter ul li a span{
     font-size: 39px;
@@ -398,11 +404,14 @@ section {
 .bottomfooter{
     height: 50px;
     background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .bottomfooter p{
     color: white;
+    font-size: 1.5rem;
     text-align: center;
-    font-size: 2rem;
 }
 
 /* Hidden by default */
@@ -426,7 +435,6 @@ section {
     border-radius: 1rem;
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
     width: 90%;
-    /* height: 200px; */
     position: relative;
     text-align: center;
     max-width: 800px;
