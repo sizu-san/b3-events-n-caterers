@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // server/node_emailer/server.js
     function sendBookingMail(subject, text) {
-        fetch('http://localhost:5000/v1/text-mail', {
+        fetch('https://b3-events-n-caterers-1.onrender.com/v1/text-mail', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ subject, text })

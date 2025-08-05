@@ -6,12 +6,31 @@ const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+}));
 app.use(bodyParser.urlencoded({ extended: false }));
 const route = express.Router();
 // create reusable transporter object using the default SMTP transport
+
+const path = require('path'); // Add at the top with other requires
+
+// ...existing code...
+
+// Serve static files from ../static
+app.use('/static', express.static(path.join(__dirname, '../../static')));
+
+// Serve index.html for the root path
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../index.html'));
+});
+
+// ...existing code...
+
 const transporter = nodemailer.createTransport({
-port: 465,               // true for 465, false for other ports
+jjport: 465,               // true for 465, false for other ports
 host: "smtp.gmail.com",
    auth: {
         user: 'jk1871881@gmail.com',

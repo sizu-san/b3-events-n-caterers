@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const PDFDocument = require("pdfkit");
 const cors = require('cors');
-const serverless = require('serverless-http');
 
 
 const app = express();
@@ -66,13 +65,12 @@ route.post("/text-mail", async function(req, res) {
     doc.font('Times-Roman').fontSize(12).text(`Subject: ${subject}\nText: ${text}`);
     doc.end();
 });
-// const port = process.env.PORT || 5000;
-// app.use('/v1', route);
-// app.listen(port, () => {
-//     console.log(`Server listening on port ${port}`);
-// });
+ const port = process.env.PORT || 5000;
+ app.use('/v1', route);
+ app.listen(port, () => {
+     console.log(`Server listening on port ${port}`);
+ });
 
 
-module.exports.handler = serverless(app);
 
 
